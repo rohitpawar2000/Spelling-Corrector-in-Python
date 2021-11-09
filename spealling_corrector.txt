@@ -1,0 +1,23 @@
+from textblob import TextBlob
+from tkinter import  *
+
+root=Tk()
+def cor():
+    a=TextBlob(e.get())
+    correct_Text=Label(root, text=str(a.correct()), font="helvetica  12  bold")
+    correct_Text.pack()
+
+
+root.title("THIS IS SPELLING CORRECTOR")
+root.geometry("600x500")
+
+lbl=Label(root, text="ENTER YOUR SENTENCE", font="helvetica 18 bold",width=60, fg="grey" ,borderwidth=16)
+lbl.pack()
+
+e=Entry(root, font="helvetica 18 bold",width=50 ,borderwidth=16)
+e.pack()
+
+b=Button(root, text="CORRECT",font="helvetica 18 bold", fg="red" ,borderwidth=16 , command=cor)
+b.pack()
+
+root.mainloop()
